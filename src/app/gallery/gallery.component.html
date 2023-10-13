@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+
+			<div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner" >
+				  <div class="carousel-item" *ngFor = 'let img of appList let i = index' [ngClass]="{'active': i == 0 }">
+					<img [src]='img.url' class="d-block w-100" alt="...">
+					<!-- $('imageCarousel').carousel({{imgUrl}}); -->
+				  </div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		
+	  </div>
+	</div>
+  </div>
+
+<!-- Image Gallery -->
+<div class="card">
+    <div class="card-header">
+        <h4>Gallery</h4>
+    </div>
+</div>
+<div class="container col-6">
+	<div class="row justify">
+		<div  class="col-sm-3" *ngFor = 'let glst of appList let i = index'>
+		
+			<!-- data-bs-toggle="modal" data-bs-target="#staticBackdrop" -->
+			<a [href]="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="col-sm-4">
+				<img [src]='glst.url' class="img-thumbnail"><!--(click)="onClickImage(i)"-->
+			</a>
+
+			<!-- data-toggle="lightbox" data-gallery="example-gallery" -->
+			<!-- <a href={{glst.url}} data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+				<img [src]='glst.url' class="img-thumbnail">
+			</a> -->
+		</div>
+	</div>
+	
+</div>
+

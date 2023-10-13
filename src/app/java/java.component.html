@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+      <h4>Java Courses Available</h4>
+  </div>
+</div>
+<div class="container">
+    <div class="row" >
+      <div class="card col-3" style="width: 18rem;" *ngFor = 'let lst of appList'>
+      <img [src] = 'lst.url' class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{lst.title}}</h5>
+        <p class="card-text">FROM {{lst.price | currency}}</p>
+        <a href="{{lst.info}}" target="_blank" class="btn btn-primary">Find out more</a>
+      </div>
+    </div>
+  </div>
+</div>

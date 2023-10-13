@@ -1,0 +1,84 @@
+<div>
+  <div class="card">
+    <div class="card-header">
+        <h4>Registration Form</h4>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4 mx-md-n5">
+    <div>
+      <!-- <h1>
+        Welcome to {{title}}!!
+      </h1> -->
+      <form [formGroup]="angForm" novalidate (ngSubmit)="onFormSubmit()">
+            <div class="form-group">
+                <label>Name:</label><span class="text-danger"> *</span>
+                <input class="form-control" formControlName="name" type="text">
+            </div>
+            <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" 
+             class="alert alert-danger">
+                <div *ngIf="angForm.controls['name'].errors">
+                  Name is required. Minimum 5 chars.
+                </div>
+                <!-- <div *ngIf="angForm.controls['name'].errors.minLength">
+                  Name must be at least 5 chars.
+                </div> -->
+    
+            </div>
+             <div class="form-group">
+                <label>Address:</label><span class="text-danger"> *</span>
+                <input class="form-control" formControlName="address" type="text">
+            </div>
+            <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" 
+               class="alert alert-danger">
+                <div *ngIf="angForm.controls['address'].errors">
+                  Address is required.
+                </div>
+            </div>
+  
+            <div class="form-group">
+              <label>Location:</label><span class="text-danger"> *</span>
+              <input class="form-control" formControlName="location" type="text">
+          </div>
+          <div *ngIf="angForm.controls['location'].invalid && (angForm.controls['location'].dirty || angForm.controls['location'].touched)" 
+             class="alert alert-danger">
+              <div *ngIf="angForm.controls['location'].errors">
+                Location is required.
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <label>Email:</label><span class="text-danger"> *</span>
+              <input class="form-control" formControlName="email" type="text" placeholder="abc@def.com">
+          </div>
+          <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" 
+             class="alert alert-danger">
+              <div *ngIf="angForm.controls['email'].errors">
+                  Valid email is required.
+              </div>
+          </div>
+
+          <br>
+          <div>
+              <button type="submit"
+              [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+              Register
+          </button>
+          </div>
+            
+      </form>
+      <br />
+      <div *ngIf="angForm.valid && isValidFormSubmitted">
+      <!-- <p>Form value: {{ angForm.value | json }}</p>
+      <p>Form status: {{ angForm.status | json }}</p> -->
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Successfully registered.</strong> You will be contacted by email for updates.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-4"></div>
+</div>

@@ -1,0 +1,51 @@
+<div class="card-header">
+    Courses Available
+</div>
+<div class="container">
+    <div class="row" >
+      <div class="card col-3" style="width: 18rem;" *ngFor = 'let lst of appList'>
+      <img [src] = 'lst.url' class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{lst.title}}</h5>
+        <p class="card-text">FROM <br> {{lst.price | currency}}</p>
+        <a href="#" class="btn btn-primary">Find out more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Course Title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Find out more</a>
+    </div>
+  </div> -->
+
+  <!-- <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+      <div class="d-flex w-100 justify-content-between" *ngFor = 'let lst of appList'>
+        <h5 class="mb-1">lst.url</h5>
+        <small>3 days ago</small>
+      </div>
+      <p class="mb-1">Some placeholder content in a paragraph.</p>
+      <small>And some small print.</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">Some placeholder content in a paragraph.</p>
+      <small class="text-muted">And some muted small print.</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">List group item heading</h5>
+        <small class="text-muted">3 days ago</small>
+      </div>
+      <p class="mb-1">Some placeholder content in a paragraph.</p>
+      <small class="text-muted">And some muted small print.</small>
+    </a>
+  </div> -->
